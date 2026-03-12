@@ -615,23 +615,23 @@ const PROJECTS: ProjectData[] = [
     id: 3,
     title: 'AI 學習諮詢師',
     subtitle: 'Multi-Agent RAG · LangGraph',
-    accentColor: '#60a5fa',
+    accentColor: 'var(--c-amber)',
     github: 'https://github.com/stevenbocheng/LLM-AI-Learning-Consultant',
-    body: <AIConsultantBody />,
+    body: <Project3Body />,
   },
   {
     id: 4,
     title: '中研院統計所實習',
     subtitle: 'Academia Sinica · Statistics Institute',
     accentColor: '#34d399',
-    body: <Project3Body />,
+    body: <Project4Body />,
   },
   {
     id: 5,
     title: 'CryoEM 粒子挑選自動化',
     subtitle: '論文研究 · Active Learning',
     accentColor: '#a78bfa',
-    body: <Project4Body />,
+    body: <Project5Body />,
   },
 ]
 
