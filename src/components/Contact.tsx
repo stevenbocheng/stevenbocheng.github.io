@@ -9,6 +9,7 @@ export default function Contact({ onCVClick }: Props) {
   return (
     <section
       id="contact"
+      className="section-padded"
       style={{
         padding: '7rem 2rem',
         borderTop: '1px solid var(--c-border)',

@@ -61,6 +61,7 @@ export default function Timeline() {
   return (
     <section
       id="experience"
+      className="section-padded"
       style={{
         padding: '6rem 2rem',
         borderTop: '1px solid var(--c-border)',
@@ -94,7 +95,7 @@ export default function Timeline() {
           </h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
+        <div className="timeline-main-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
           {/* Left: Timeline */}
           <motion.div
             variants={stagger}
@@ -225,7 +226,7 @@ export default function Timeline() {
               Honors & Certificates
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.875rem' }}>
+            <div className="two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.875rem' }}>
               {[
                 {
                   src: '/award_data.png',

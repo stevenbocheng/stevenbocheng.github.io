@@ -530,7 +530,7 @@ export default function ProjectGrid() {
   const [activeProject, setActiveProject] = useState<ProjectData | null>(null)
 
   return (
-    <section id="projects" style={{ padding: '6rem 2rem', maxWidth: '1100px', margin: '0 auto' }}>
+    <section id="projects" className="section-padded" style={{ padding: '6rem 2rem', maxWidth: '1100px', margin: '0 auto' }}>
       {/* Section header */}
       <div style={{ marginBottom: '3rem' }}>
         <p
