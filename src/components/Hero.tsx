@@ -236,7 +236,7 @@ export default function Hero() {
           }}
         >
           <img
-            src="/profile.jpg"
+            src="/個人照片-Photoroom.png"
             alt="阮柏誠"
             style={{
               width: '100%',
