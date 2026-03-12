@@ -31,6 +31,7 @@ export default function NavDots() {
   return (
     <nav
       aria-label="Page sections"
+      className="nav-dots"
       style={{
         position: 'fixed',
         right: '1.75rem',

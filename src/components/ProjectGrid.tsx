@@ -71,7 +71,7 @@ function Project1Body() {
       {/* Benchmark images */}
       <div>
         <SectionLabel>Ablation Study — Kalman Filter 效能驗證</SectionLabel>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+        <div className="two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
           <div>
             <p style={{ fontSize: '0.75rem', color: 'var(--c-muted)', marginBottom: '0.5rem', fontFamily: 'var(--f-mono)' }}>
               合成資料（高斯雜訊模擬）
@@ -136,7 +136,7 @@ function Project2Body() {
       {/* Stats */}
       <div>
         <SectionLabel>Performance Metrics</SectionLabel>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem' }}>
+        <div className="stat-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem' }}>
           <StatBadge label="Mean Absolute Percentage Error" value="MAPE 11.9%" color="var(--c-amber)" />
           <StatBadge label="Coefficient of Determination" value="R² 0.625" color="var(--c-amber)" />
           <StatBadge label="行政區覆蓋 · 實價登錄筆數" value="31 / 137,244" color="var(--c-amber)" />
@@ -192,6 +192,7 @@ function Project2Body() {
           ].map((row, i) => (
             <div
               key={i}
+              className="two-col"
               style={{
                 display: 'grid',
                 gridTemplateColumns: '1fr 1fr',
@@ -229,7 +230,7 @@ function Project3Body() {
       {/* Stats */}
       <div>
         <SectionLabel>研究規模</SectionLabel>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem' }}>
+        <div className="stat-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem' }}>
           <StatBadge label="台灣人體生物資料庫參與者" value="1,491 人" color="#34d399" />
           <StatBadge label="目標分析基因" value="3 個基因" color="#34d399" />
           <StatBadge label="端到端自動化流程" value="GWAS → 3D" color="#34d399" />
@@ -320,12 +321,13 @@ function Project3Body() {
       </div>
 
       {/* PPT + Report */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+      <div className="two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
         <div>
           <SectionLabel>暑期最終成果 (PPT)</SectionLabel>
           <iframe
             src="/internship_final.pdf"
             title="暑期最終成果 PPT"
+            className="pdf-iframe"
             style={{
               width: '100%',
               height: '520px',
@@ -340,6 +342,7 @@ function Project3Body() {
           <iframe
             src="/internship_report.pdf"
             title="中研院暑期實習生個人書面報告"
+            className="pdf-iframe"
             style={{
               width: '100%',
               height: '520px',
@@ -568,7 +571,7 @@ export default function ProjectGrid() {
             <motion.div
               key={project.id}
               variants={fadeUp}
-              className="card-hover"
+              className="card-hover project-card-grid"
               style={{
                 display: 'grid',
                 gridTemplateColumns: '80px 1fr auto',
@@ -583,7 +586,7 @@ export default function ProjectGrid() {
               onClick={() => setActiveProject(project)}
             >
               {/* Index */}
-              <div>
+              <div className="project-card-index">
                 <span
                   style={{
                     fontFamily: 'var(--f-mono)',

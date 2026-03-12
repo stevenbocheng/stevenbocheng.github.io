@@ -41,6 +41,7 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
+        className="hero-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',

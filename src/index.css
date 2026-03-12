@@ -95,6 +95,51 @@ body {
   outline: none;
 }
 
+/* ─── Mobile Responsive ──────────────────────────────── */
+@media (max-width: 768px) {
+  /* Hero bento grid → single column stack */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-grid > * {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  /* Hide right-side navigation dots on mobile */
+  .nav-dots {
+    display: none !important;
+  }
+
+  /* Project card: hide index number, 2-col layout */
+  .project-card-grid {
+    grid-template-columns: 1fr auto !important;
+  }
+  .project-card-index {
+    display: none !important;
+  }
+
+  /* Dialog inner grids → single column */
+  .stat-grid-3,
+  .two-col {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Gesture table on mobile */
+  .gesture-grid {
+    grid-template-columns: auto 1fr !important;
+    font-size: 0.78rem !important;
+  }
+  .gesture-grid-note {
+    display: none !important;
+  }
+
+  /* PDF iframes: shorter on mobile */
+  .pdf-iframe {
+    height: 380px !important;
+  }
+}
+
 /* ─── Prose-style headings inside dialogs ─────────────── */
 .dialog-section h3 {
   font-family: var(--f-display);
