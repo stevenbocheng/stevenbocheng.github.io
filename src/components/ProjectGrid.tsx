@@ -214,7 +214,48 @@ function Project2Body() {
   )
 }
 
-function AIConsultantBody() {
+function Project5Body() {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '1.25rem',
+        padding: '4rem 2rem',
+        textAlign: 'center',
+      }}
+    >
+      <div
+        style={{
+          width: '4rem',
+          height: '4rem',
+          borderRadius: '50%',
+          border: '2px solid #a78bfa40',
+          backgroundColor: '#a78bfa0a',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '1.5rem',
+        }}
+      >
+        🔬
+      </div>
+      <h3 style={{ fontFamily: 'var(--f-display)', fontSize: '1.5rem', fontWeight: 700, color: 'var(--c-text)' }}>
+        敬請期待
+      </h3>
+      <p style={{ fontSize: '0.9rem', color: 'var(--c-muted)', maxWidth: '28rem', lineHeight: 1.8 }}>
+        本研究論文正在撰寫中。
+        <br />
+        使用主動學習搭配粒子校正流程與不確定性指標，
+        取代專家挑選 CryoEM 蛋白質粒子影像所需耗費的時間與成本。
+      </p>
+    </div>
+  )
+}
+
+function _AIConsultantBody_unused() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       {/* Overview */}
