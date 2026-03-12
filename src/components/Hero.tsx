@@ -288,7 +288,7 @@ export default function Hero() {
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
             {[
-              { label: '應用數學系', detail: '微積分 · 線代 · 數理統計' },
+              { label: '中山大學應數碩', detail: '微積分 · 線代 · 數理統計' },
               { label: '中研院統計所', detail: '暑期實習生' },
               { label: '微積分助教', detail: '淡江大學 · 中山大學' },
             ].map((row) => (

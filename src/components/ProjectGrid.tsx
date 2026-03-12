@@ -268,6 +268,36 @@ function AIConsultantBody() {
         </div>
       </div>
 
+      {/* Tech stack table */}
+      <div>
+        <SectionLabel>技術堆疊</SectionLabel>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          {[
+            { category: 'LLM', tech: 'OpenAI GPT-4o（via LangChain）' },
+            { category: 'Agent 框架', tech: 'LangGraph StateGraph + TypedDict 狀態機' },
+            { category: '向量搜尋', tech: 'FAISS（語義）+ BM25（關鍵字）EnsembleRetriever' },
+            { category: 'Embedding', tech: 'intfloat/multilingual-e5-small（本地執行，免 GPU）' },
+            { category: 'UI & 可觀測性', tech: 'Streamlit + LangSmith Token 追蹤' },
+          ].map((row, i) => (
+            <div
+              key={i}
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '7rem 1fr',
+                gap: '1rem',
+                padding: '0.6rem 1rem',
+                borderRadius: '0.5rem',
+                backgroundColor: 'var(--c-raised)',
+                fontSize: '0.83rem',
+              }}
+            >
+              <span style={{ color: '#60a5fa', fontFamily: 'var(--f-mono)', fontSize: '0.72rem' }}>{row.category}</span>
+              <span style={{ color: 'var(--c-subtle)' }}>{row.tech}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Demo Video */}
       <div>
         <SectionLabel>Demo 影片</SectionLabel>
@@ -321,35 +351,6 @@ function AIConsultantBody() {
         </div>
       </div>
 
-      {/* Tech stack table */}
-      <div>
-        <SectionLabel>技術堆疊</SectionLabel>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-          {[
-            { category: 'LLM', tech: 'OpenAI GPT-4o（via LangChain）' },
-            { category: 'Agent 框架', tech: 'LangGraph StateGraph + TypedDict 狀態機' },
-            { category: '向量搜尋', tech: 'FAISS（語義）+ BM25（關鍵字）EnsembleRetriever' },
-            { category: 'Embedding', tech: 'intfloat/multilingual-e5-small（本地執行，免 GPU）' },
-            { category: 'UI & 可觀測性', tech: 'Streamlit + LangSmith Token 追蹤' },
-          ].map((row, i) => (
-            <div
-              key={i}
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '7rem 1fr',
-                gap: '1rem',
-                padding: '0.6rem 1rem',
-                borderRadius: '0.5rem',
-                backgroundColor: 'var(--c-raised)',
-                fontSize: '0.83rem',
-              }}
-            >
-              <span style={{ color: '#60a5fa', fontFamily: 'var(--f-mono)', fontSize: '0.72rem' }}>{row.category}</span>
-              <span style={{ color: 'var(--c-subtle)' }}>{row.tech}</span>
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   )
 }
