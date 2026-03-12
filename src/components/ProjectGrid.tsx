@@ -615,6 +615,7 @@ const PROJECTS: ProjectData[] = [
     title: 'AI 學習諮詢師',
     subtitle: 'Multi-Agent RAG · LangGraph',
     accentColor: '#60a5fa',
+    github: 'https://github.com/stevenbocheng/LLM-AI-Learning-Consultant',
     body: <AIConsultantBody />,
   },
   {
