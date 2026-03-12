@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ─────────────────────────────────── */
+:root {
+  --c-void:       #090910;
+  --c-surface:    #12121c;
+  --c-raised:     #1a1a28;
+  --c-border:     #2a2a3a;
+  --c-neon:       #4ade80;
+  --c-neon-glow:  rgba(74, 222, 128, 0.15);
+  --c-neon-dim:   rgba(74, 222, 128, 0.08);
+  --c-amber:      #f0a040;
+  --c-blue:       #60a5fa;
+  --c-text:       #e8e8f0;
+  --c-subtle:     #a0a0b0;
+  --c-muted:      #6b6b80;
+
+  --f-display: 'Space Grotesk', sans-serif;
+  --f-body:    'Noto Sans TC', sans-serif;
+  --f-mono:    'JetBrains Mono', monospace;
+}
+
+/* ─── Reset ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--c-void);
+  color: var(--c-text);
+  font-family: var(--f-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--c-void); }
+::-webkit-scrollbar-thumb { background: var(--c-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--c-neon); }
+
+/* ─── Grid paper texture ─────────────────────────────── */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(42, 42, 58, 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 42, 58, 0.25) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* ─── Tech Marquee ───────────────────────────────────── */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 35s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ─── Award zoom hint on hover ──────────────────────── */
+.card-hover:hover .award-zoom-hint {
+  opacity: 1 !important;
+  background-color: rgba(9,9,16,0.45) !important;
+}
+
+/* ─── Neon hover glow on cards ───────────────────────── */
+.card-hover {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+.card-hover:hover {
+  border-color: rgba(74, 222, 128, 0.35) !important;
+  box-shadow: 0 0 24px rgba(74, 222, 128, 0.06);
+  transform: translateY(-2px);
+}
+
+/* ─── Radix Dialog overlay & content ─────────────────── */
+[data-radix-dialog-overlay] {
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 9, 16, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 50;
+}
+[data-radix-dialog-content] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 51;
+  max-height: 90vh;
+  overflow-y: auto;
+  outline: none;
+}
+
+/* ─── Prose-style headings inside dialogs ─────────────── */
+.dialog-section h3 {
+  font-family: var(--f-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-bottom: 0.75rem;
+}

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.agent/
+.agents/
+skills-lock.json
+resource/
+*.local
