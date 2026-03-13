@@ -1,11 +1,7 @@
 import { motion } from 'framer-motion'
 import { Mail, Github, Linkedin, FileText } from 'lucide-react'
 
-interface Props {
-  onCVClick: () => void
-}
-
-export default function Contact({ onCVClick }: Props) {
+export default function Contact() {
   return (
     <section
       id="contact"
@@ -110,8 +106,10 @@ export default function Contact({ onCVClick }: Props) {
             </a>
 
             {/* Ghost button CV */}
-            <button
-              onClick={onCVClick}
+            <a
+              href="/Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -125,6 +123,7 @@ export default function Contact({ onCVClick }: Props) {
                 fontSize: '0.875rem',
                 cursor: 'pointer',
                 transition: 'border-color 0.2s, color 0.2s',
+                textDecoration: 'none',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'var(--c-neon)'
@@ -137,7 +136,7 @@ export default function Contact({ onCVClick }: Props) {
             >
               <FileText size={15} />
               Full CV
-            </button>
+            </a>
           </div>
 
           {/* Social links */}
