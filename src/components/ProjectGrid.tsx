@@ -255,7 +255,85 @@ function Project5Body() {
   )
 }
 
+/* ─── Project 3: AI Learning Consultant ─────────────── */
 function Project3Body() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+      {/* Overview */}
+      <div>
+        <SectionLabel>專案概覽</SectionLabel>
+        <p style={{ fontSize: '0.9rem', color: 'var(--c-subtle)', lineHeight: 1.85 }}>
+          使用者輸入學習背景與目標（中文），系統自動規劃個人化短中長期學習路線，
+          並從 178 萬筆 Goodreads 書籍資料庫中以混合式 RAG 搜尋推薦書單，
+          輸出結構化的 Markdown 學習建議。
+        </p>
+      </div>
+
+      {/* Stats */}
+      <div>
+        <SectionLabel>系統規模</SectionLabel>
+        <div className="stat-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem' }}>
+          <StatBadge label="Goodreads 書籍資料庫" value="178 萬筆" color="#60a5fa" />
+          <StatBadge label="高評分取樣" value="5,000 筆" color="#60a5fa" />
+          <StatBadge label="Embedding 模型" value="multilingual-e5" color="#60a5fa" />
+        </div>
+      </div>
+
+      {/* Architecture */}
+      <div>
+        <SectionLabel>系統架構亮點</SectionLabel>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <Highlight icon="🤖" title="Multi-Agent 設計（LangGraph）" desc="拆分為 Planner → Retriever → Writer 三個節點，各司其職。預留 Reviewer 自動重審機制，含條件分支與 revision_count 上限保護。" color="#60a5fa" />
+          <Highlight icon="🔍" title="混合式 RAG 架構" desc="FAISS 語義搜尋（60%）+ BM25 關鍵字搜尋（40%）EnsembleRetriever 融合，解決純向量搜尋在專有名詞上的盲點。" color="#60a5fa" />
+          <Highlight icon="🌐" title="跨語言橋接" desc="Planner 將使用者的中文目標自動轉換為英文 SEARCH_QUERIES，讓英文書籍資料庫的 BM25 搜尋正確發揮效果。" color="var(--c-neon)" />
+          <Highlight icon="🛡️" title="輸入防護 + 可觀測性" desc="LLM 分類器過濾不相關問題，避免無效 API 呼叫。LangSmith 全程追蹤 Token 用量與執行時間。" color="var(--c-neon)" />
+        </div>
+      </div>
+
+      {/* Tech stack */}
+      <div>
+        <SectionLabel>技術堆疊</SectionLabel>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          {[
+            { category: 'LLM', tech: 'OpenAI GPT-4o（via LangChain）' },
+            { category: 'Agent 框架', tech: 'LangGraph StateGraph + TypedDict 狀態機' },
+            { category: '向量搜尋', tech: 'FAISS（語義）+ BM25（關鍵字）EnsembleRetriever' },
+            { category: 'Embedding', tech: 'intfloat/multilingual-e5-small（本地執行，免 GPU）' },
+            { category: 'UI & 可觀測性', tech: 'Streamlit + LangSmith Token 追蹤' },
+          ].map((row, i) => (
+            <div key={i} style={{ display: 'grid', gridTemplateColumns: '7rem 1fr', gap: '1rem', padding: '0.6rem 1rem', borderRadius: '0.5rem', backgroundColor: 'var(--c-raised)', fontSize: '0.83rem' }}>
+              <span style={{ color: '#60a5fa', fontFamily: 'var(--f-mono)', fontSize: '0.72rem' }}>{row.category}</span>
+              <span style={{ color: 'var(--c-subtle)' }}>{row.tech}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Demo Video */}
+      <div>
+        <SectionLabel>Demo 影片</SectionLabel>
+        <div style={{ position: 'relative', paddingBottom: '56.25%', borderRadius: '0.75rem', overflow: 'hidden', border: '1px solid var(--c-border)' }}>
+          <iframe src="https://www.youtube.com/embed/ZJcxpqSZHUI" title="AI 學習諮詢師 Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }} />
+        </div>
+      </div>
+
+      {/* Screenshots */}
+      <div>
+        <SectionLabel>使用範例截圖</SectionLabel>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <img src="/ai-consultant-demo1.jpg" alt="AI 學習諮詢師輸入範例" style={{ width: '100%', borderRadius: '0.5rem', border: '1px solid var(--c-border)' }} />
+          <div className="two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <img src="/ai-consultant-demo2.jpg" alt="輸出 1" style={{ width: '100%', borderRadius: '0.5rem', border: '1px solid var(--c-border)' }} />
+            <img src="/ai-consultant-demo3.jpg" alt="輸出 2" style={{ width: '100%', borderRadius: '0.5rem', border: '1px solid var(--c-border)' }} />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ─── Project 4: Academia Sinica Internship ─────────── */
+function Project4Body() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       {/* Overview */}
@@ -288,33 +366,10 @@ function Project3Body() {
             { step: '03', title: '3D 結構建模', desc: 'AlphaFold 3 + 固定隨機種子確保可重複性' },
             { step: '04', title: '結構比對分析', desc: 'RMSD & TM-score 全局 + 局部結構域比對' },
           ].map((row) => (
-            <div
-              key={row.step}
-              style={{
-                display: 'flex',
-                gap: '1rem',
-                alignItems: 'flex-start',
-                padding: '0.75rem 1rem',
-                borderRadius: '0.5rem',
-                backgroundColor: 'var(--c-raised)',
-              }}
-            >
-              <span
-                style={{
-                  fontFamily: 'var(--f-mono)',
-                  fontSize: '0.7rem',
-                  color: '#34d399',
-                  fontWeight: 700,
-                  flexShrink: 0,
-                  paddingTop: '0.1rem',
-                }}
-              >
-                {row.step}
-              </span>
+            <div key={row.step} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', padding: '0.75rem 1rem', borderRadius: '0.5rem', backgroundColor: 'var(--c-raised)' }}>
+              <span style={{ fontFamily: 'var(--f-mono)', fontSize: '0.7rem', color: '#34d399', fontWeight: 700, flexShrink: 0, paddingTop: '0.1rem' }}>{row.step}</span>
               <div>
-                <p style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--c-text)', marginBottom: '0.15rem' }}>
-                  {row.title}
-                </p>
+                <p style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--c-text)', marginBottom: '0.15rem' }}>{row.title}</p>
                 <p style={{ fontSize: '0.8rem', color: 'var(--c-muted)' }}>{row.desc}</p>
               </div>
             </div>
@@ -326,38 +381,20 @@ function Project3Body() {
       <div>
         <SectionLabel>成果報告影片</SectionLabel>
         <div style={{ position: 'relative', paddingBottom: '56.25%', borderRadius: '0.75rem', overflow: 'hidden', border: '1px solid var(--c-border)' }}>
-          <iframe
-            src="https://www.youtube.com/embed/WMRV9NNiG7Q"
-            title="中研院統計所暑期實習成果報告"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
-          />
+          <iframe src="https://www.youtube.com/embed/WMRV9NNiG7Q" title="中研院統計所暑期實習成果報告" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }} />
         </div>
       </div>
 
       {/* Poster PDF */}
       <div>
         <SectionLabel>研究海報 (Poster)</SectionLabel>
-        <iframe
-          src="/poster.pdf"
-          title="阮柏誠 中研院實習海報"
-          style={{
-            width: '100%',
-            height: '680px',
-            border: '1px solid var(--c-border)',
-            borderRadius: '0.75rem',
-            backgroundColor: '#fff',
-          }}
-        />
+        <iframe src="/poster.pdf" title="阮柏誠 中研院實習海報" style={{ width: '100%', height: '680px', border: '1px solid var(--c-border)', borderRadius: '0.75rem', backgroundColor: '#fff' }} />
       </div>
 
       {/* Divider */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
         <div style={{ flex: 1, height: '1px', backgroundColor: 'var(--c-border)' }} />
-        <span style={{ fontFamily: 'var(--f-mono)', fontSize: '0.7rem', color: 'var(--c-muted)' }}>
-          更多文件
-        </span>
+        <span style={{ fontFamily: 'var(--f-mono)', fontSize: '0.7rem', color: 'var(--c-muted)' }}>更多文件</span>
         <div style={{ flex: 1, height: '1px', backgroundColor: 'var(--c-border)' }} />
       </div>
 
@@ -365,129 +402,13 @@ function Project3Body() {
       <div className="two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
         <div>
           <SectionLabel>暑期最終成果 (PPT)</SectionLabel>
-          <iframe
-            src="/internship_final.pdf"
-            title="暑期最終成果 PPT"
-            className="pdf-iframe"
-            style={{
-              width: '100%',
-              height: '520px',
-              border: '1px solid var(--c-border)',
-              borderRadius: '0.75rem',
-              backgroundColor: '#fff',
-            }}
-          />
+          <iframe src="/internship_final.pdf" title="暑期最終成果 PPT" className="pdf-iframe" style={{ width: '100%', height: '520px', border: '1px solid var(--c-border)', borderRadius: '0.75rem', backgroundColor: '#fff' }} />
         </div>
         <div>
           <SectionLabel>個人書面報告</SectionLabel>
-          <iframe
-            src="/internship_report.pdf"
-            title="中研院暑期實習生個人書面報告"
-            className="pdf-iframe"
-            style={{
-              width: '100%',
-              height: '520px',
-              border: '1px solid var(--c-border)',
-              borderRadius: '0.75rem',
-              backgroundColor: '#fff',
-            }}
-          />
+          <iframe src="/internship_report.pdf" title="中研院暑期實習生個人書面報告" className="pdf-iframe" style={{ width: '100%', height: '520px', border: '1px solid var(--c-border)', borderRadius: '0.75rem', backgroundColor: '#fff' }} />
         </div>
       </div>
-
-    </div>
-  )
-}
-
-/* ─── Project 4: CryoEM (coming soon) ───────────────── */
-function Project4Body() {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '1.25rem',
-        padding: '4rem 2rem',
-        textAlign: 'center',
-      }}
-    >
-      <div
-        style={{
-          width: '4rem',
-          height: '4rem',
-          borderRadius: '50%',
-          border: '2px solid #a78bfa40',
-          backgroundColor: '#a78bfa0a',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '1.5rem',
-        }}
-      >
-        🔬
-      </div>
-      <h3
-        style={{
-          fontFamily: 'var(--f-display)',
-          fontSize: '1.5rem',
-          fontWeight: 700,
-          color: 'var(--c-text)',
-        }}
-      >
-        敬請期待
-      </h3>
-      <p
-        style={{
-          fontSize: '0.9rem',
-          color: 'var(--c-muted)',
-          maxWidth: '28rem',
-          lineHeight: 1.8,
-        }}
-      >
-        本研究論文正在撰寫中。
-        <br />
-        使用主動學習搭配粒子校正流程與不確定性指標，
-        取代專家挑選 CryoEM 蛋白質粒子影像所需耗費的時間與成本。
-      </p>
-      <div
-        style={{
-          display: 'flex',
-          gap: '0.5rem',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          marginTop: '0.5rem',
-        }}
-      >
-        {['Python', 'Deep Learning', 'Active Learning', 'CryoEM', '數據分析'].map((tag) => (
-          <span
-            key={tag}
-            style={{
-              fontFamily: 'var(--f-mono)',
-              fontSize: '0.72rem',
-              padding: '0.25rem 0.7rem',
-              border: '1px solid #a78bfa30',
-              borderRadius: '0.25rem',
-              color: '#a78bfa',
-              backgroundColor: '#a78bfa08',
-            }}
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-      <p
-        style={{
-          fontFamily: 'var(--f-mono)',
-          fontSize: '0.7rem',
-          color: 'var(--c-border)',
-          marginTop: '1rem',
-          letterSpacing: '0.1em',
-        }}
-      >
-        // details coming soon
-      </p>
     </div>
   )
 }
