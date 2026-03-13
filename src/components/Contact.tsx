@@ -42,7 +42,7 @@ export default function Contact() {
               marginBottom: '0.75rem',
             }}
           >
-            // let's connect
+            // contact
           </p>
 
           {/* Heading */}
@@ -57,9 +57,9 @@ export default function Contact() {
               maxWidth: '600px',
             }}
           >
-            Let's Solve Complex
+            Currently Open to
             <br />
-            <span style={{ color: 'var(--c-neon)' }}>Problems</span> Together
+            <span style={{ color: 'var(--c-neon)' }}>Opportunities</span>
           </h2>
 
           <p
@@ -71,7 +71,7 @@ export default function Contact() {
               marginBottom: '2.5rem',
             }}
           >
-            對 Deep Learning、Computer Vision 或數據科學有合作想法？歡迎直接聯絡，最快回覆管道是 Email。
+            對資料科學、數據分析、機器學習或深度學習相關職位有興趣。有合作想法或工作機會的話，歡迎直接寄信。
           </p>
 
           {/* Primary CTA */}
