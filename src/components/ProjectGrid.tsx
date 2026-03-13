@@ -417,7 +417,7 @@ function Project4Body() {
 const PROJECTS: ProjectData[] = [
   {
     id: 1,
-    title: 'Hyper-Math Vision',
+    title: '手部追蹤即時數學辨識系統',
     subtitle: 'AI 空中書寫數學解題器',
     accentColor: 'var(--c-neon)',
     github: 'https://github.com/stevenbocheng/AI-imaging-related-projects',
