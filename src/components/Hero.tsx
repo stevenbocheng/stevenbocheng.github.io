@@ -190,7 +190,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/%E6%9F%8F%E8%AA%A0-%E9%98%AE-a44bb7275"
+                href="https://www.linkedin.com/in/bo-cheng-a44bb7275"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

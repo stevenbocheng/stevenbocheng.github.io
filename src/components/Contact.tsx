@@ -156,7 +156,7 @@ export default function Contact({ onCVClick }: Props) {
                 label: 'GitHub',
               },
               {
-                href: 'https://www.linkedin.com/in/%E6%9F%8F%E8%AA%A0-%E9%98%AE-a44bb7275',
+                href: 'https://www.linkedin.com/in/bo-cheng-a44bb7275',
                 icon: <Linkedin size={18} />,
                 label: 'LinkedIn',
               },
