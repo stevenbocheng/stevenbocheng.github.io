@@ -5,22 +5,37 @@ const SIDE_PROJECTS = [
   {
     title: 'Seoul Travel Planner',
     titleZh: '首爾旅遊規劃大師',
-    desc: '整合 Gemini AI 智慧導覽、即時匯率記帳與 Google Sheets 雲端存儲的個人化旅遊管家。',
-    highlights: ['Optimistic UI 即時操作回饋', '智慧匯率凍結記帳', 'Serverless GAS 後端'],
-    tags: ['React 18', 'TypeScript', 'Gemini AI', 'Google Apps Script', 'Tailwind CSS'],
+    desc: '由開發者主導需求與測試，與 AI 協作完成架構設計，從零打造一款專為首爾自由行設計的全端 Web App。',
+    highlights: [
+      '每日行程規劃，支援新增、編輯、排序景點',
+      'Gemini AI 自動生成景點介紹與行程優化建議',
+      '即時首爾天氣預報（Open-Meteo API）',
+      '韓元 / 台幣匯率換算與記帳（匯率凍結）',
+      'Naver Map 導航路線規劃',
+      'Email 帳號登入，多用戶資料隔離',
+    ],
+    tags: ['React 18', 'TypeScript', 'Gemini AI', 'Google Apps Script', 'Tailwind CSS', 'GitHub Actions'],
     github: 'https://github.com/stevenbocheng/-app',
     demo: 'https://stevenbocheng.github.io/-app/',
     accent: '#f97316',
+    vibeCodingNote: '全程 AI 協作開發，涵蓋元件設計、API 整合與錯誤處理，快速交付完整產品。',
   },
   {
     title: 'Lucky Paws Scratchers',
     titleZh: '招財貓刮刮樂',
-    desc: '具有即時同步功能的內容管理式（CMS）雲端刮刮樂平台，支援多人競爭狀態鎖定。',
-    highlights: ['Canvas 像素級刮除引擎', 'Firebase Atomic Transactions 防超賣', 'GitHub Actions CI/CD'],
-    tags: ['React 19', 'TypeScript', 'Firebase', 'Canvas API', 'Framer Motion'],
+    desc: '以 Vibe Coding 方式開發的線上即時多人刮刮樂遊戲，涵蓋完整遊戲互動、雲端同步與後台管理功能。',
+    highlights: [
+      'HTML5 Canvas 刮除引擎，支援觸控 / 滑鼠與進度自動揭曉',
+      'Firebase Atomic Transactions 防止多人競態條件',
+      '後台管理面板：自訂獎項、封面、音效',
+      '快照分享功能，可產生唯讀遊戲連結',
+      '手機震動回饋 + 背景音樂循環點設定',
+    ],
+    tags: ['React 19', 'TypeScript', 'Firebase', 'Canvas API', 'Framer Motion', 'GitHub Actions'],
     github: 'https://github.com/stevenbocheng/Scratch-off-card',
     demo: 'https://stevenbocheng.github.io/Scratch-off-card/',
     accent: '#ec4899',
+    vibeCodingNote: '自行完成 Canvas 刮取演算法調校與競態條件解法設計，從想法到上線獨立完成。',
   },
 ]
 
@@ -177,6 +192,22 @@ export default function SideProjects() {
                   {tag}
                 </span>
               ))}
+            </div>
+
+            {/* Vibe Coding note */}
+            <div
+              style={{
+                padding: '0.6rem 0.875rem',
+                borderRadius: '0.4rem',
+                backgroundColor: `${proj.accent}08`,
+                borderLeft: `2px solid ${proj.accent}60`,
+                fontSize: '0.75rem',
+                color: 'var(--c-muted)',
+                lineHeight: 1.6,
+              }}
+            >
+              <span style={{ color: proj.accent, fontFamily: 'var(--f-mono)', fontSize: '0.65rem' }}>✦ Vibe Coding — </span>
+              {proj.vibeCodingNote}
             </div>
 
             {/* Links */}
