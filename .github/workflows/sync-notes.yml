@@ -1,0 +1,37 @@
+name: Sync Notes from Obsidian
+
+on:
+  repository_dispatch:
+    types: [sync-notes]
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout website repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout Obsidian notes
+        uses: actions/checkout@v4
+        with:
+          repository: stevenbocheng/obsidian-notes
+          token: ${{ secrets.NOTES_REPO_TOKEN }}
+          path: obsidian-notes
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Sync notes
+        run: node scripts/sync-notes.js
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add content/
+          git diff --staged --quiet || git commit -m "sync: update notes from Obsidian"
+          git push
