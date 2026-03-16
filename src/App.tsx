@@ -2,6 +2,7 @@ import Hero from './components/Hero'
 import TechMarquee from './components/TechMarquee'
 import ProjectGrid from './components/ProjectGrid'
 import SideProjects from './components/SideProjects'
+import KnowledgeBase from './components/KnowledgeBase'
 import Timeline from './components/Timeline'
 import Contact from './components/Contact'
 import NavDots from './components/NavDots'
@@ -13,6 +14,7 @@ export default function App() {
       <TechMarquee />
       <ProjectGrid />
       <SideProjects />
+      <KnowledgeBase />
       <Timeline />
       <Contact />
 

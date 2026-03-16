@@ -149,6 +149,11 @@ body { overflow-x: hidden; }
     height: 380px !important;
   }
 
+  /* Knowledge base bento → single column on mobile */
+  .kb-bento-grid {
+    grid-template-columns: 1fr !important;
+  }
+
   /* Reduce section vertical padding */
   .section-padded {
     padding-top: 3.5rem !important;
