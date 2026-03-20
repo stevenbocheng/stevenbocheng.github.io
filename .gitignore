@@ -5,3 +5,4 @@ dist/
 skills-lock.json
 resource/
 *.local
+.claude/
