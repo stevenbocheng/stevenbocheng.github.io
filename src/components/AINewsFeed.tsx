@@ -641,7 +641,7 @@ export default function AINewsFeed() {
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch('/ai-news.json')
+    fetch('https://raw.githubusercontent.com/stevenbocheng/AI-NEWS-Teams/main/public/ai-news.json')
       .then((r) => {
         if (!r.ok) throw new Error('fetch failed')
         return r.json() as Promise<NewsFeed>
