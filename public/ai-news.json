@@ -1,13 +1,13 @@
 {
-  "updated": "2026-03-20T11:22:12",
+  "updated": "2026-03-20T11:40:10",
   "articles": [
     {
-      "title": "AI 技術在軍事與產業的應用：挑戰與機遇",
-      "description": "本文探討 AI 技術在軍事和產業中的應用，分析其帶來的挑戰與機遇，並討論對台灣科技業的影響。",
+      "title": "五角大廈計劃開放機密資料予AI公司訓練，引發安全與倫理爭議",
+      "description": "五角大廈宣佈將允許 AI 公司使用其機密軍事資料訓練模型，此計劃引發了對安全風險及倫理問題的廣泛關注，涉及 OpenAI 和 xAI 等公司的合作。",
       "date": "2026-03-20",
-      "slug": "ai-technology-in-military-and-industry-challenges-and-opportunities",
-      "url": "https://stevenbocheng.github.io/2026/03/20/ai-technology-in-military-and-industry-challenges-and-opportunities/",
-      "image": "https://stevenbocheng.github.io/assets/images/ai-technology-in-military-and-industry-challenges-and-opportunities_v1.png",
+      "slug": "pentagon-plans-to-open-classified-data-to-ai-companies",
+      "url": "https://stevenbocheng.github.io/2026/03/20/pentagon-plans-to-open-classified-data-to-ai-companies/",
+      "image": "https://stevenbocheng.github.io/assets/images/pentagon-plans-to-open-classified-data-to-ai-companies_v1.png",
       "video": "",
       "categories": [
         "AI",
@@ -15,11 +15,11 @@
       ],
       "tags": [
         "AI",
-        "Jeff Bezos",
-        "Railway",
-        "AWS"
+        "OpenAI",
+        "xAI",
+        "五角大廈"
       ],
-      "body": "# AI 技術在軍事與產業的應用：挑戰與機遇\n\n五角大廈計劃讓 AI 公司使用機密資料訓練軍事專用模型，這可能大幅提高模型的準確性和效能。Jeff Bezos 宣布將投入 1000 億美元利用 AI 改造製造業，而 Railway 則獲得 1 億美元資金，挑戰 AWS 的市場地位。這些動向顯示 AI 技術的應用潛力正在各領域迅速擴展。\n\n## 重點整理\n- 五角大廈計劃讓 AI 公司用機密資料訓練軍事模型，提高準確性和效能。\n- Jeff Bezos 計劃投入 1000 億美元，利用 AI 改造製造業。\n- Railway 獲得 1 億美元資金，挑戰 AWS 在雲服務市場的地位。\n\n## 技術背景\n五角大廈的計劃包括在安全的資料中心訓練 AI 模型，由國防部保留資料所有權。這種方式旨在提高軍事應用的效能，但也伴隨安全風險和倫理爭議，可能引發對機密資料使用的安全疑慮。\n\n## 產業影響\nJeff Bezos 的製造業改造計劃將引入自動化和智慧供應鏈管理，可能重塑美國製造業。Railway 提供的 AI 原生雲基礎設施專為 AI 應用設計，提供開發者良好的體驗和成本效益，有望成為 AWS 的競爭對手。\n\n## 不同聲音\n針對 AI 軍事應用的計劃，有批評指出其倫理問題和安全風險，尤其是機密資料的使用。Jeff Bezos 的計劃也可能面臨 AI 泡沫的風險，需長期驗證。\n\n## 對台灣的意義\n台灣科技業需關注 AI 在製造業自動化和智慧供應鏈上的應用，以保持競爭力。雲服務市場的變化可能影響台灣企業的雲基礎設施選擇。\n\n## 參考來源\n1. [MIT Tech Review](#)\n2. [The Decoder](#)\n7. [TechBuzz](#)\n14. [VentureBeat](#)\n18. [Carnegie Council](#)"
+      "body": "# 五角大廈計劃開放機密資料予AI公司訓練，引發安全與倫理爭議\n\n五角大廈宣佈將允許 AI 公司使用其機密軍事資料訓練模型。此計劃旨在增強軍事 AI 的準確性和效能，涉及 OpenAI 和 xAI 等公司的合作。然而，該計劃引發了對安全風險及倫理問題的廣泛關注。\n\n## 重點整理\n- 五角大廈計劃讓 AI 公司使用機密資料訓練軍事專用模型，可能改變軍事 AI 的發展方式。\n- 訓練將在認證的資料中心進行，AI 公司僅在特定情況下可查看機密資料。\n- 計劃可能加速五角大廈對 AI 技術的依賴，並促使更多公司參與軍事 AI 的開發。\n- OpenAI 和 xAI 是主要參與者，而 Anthropic 因拒絕放寬技術限制未參與。\n- 計劃引發安全風險和倫理爭議，特別是關於機密資料的使用和 AI 技術的軍事應用。\n\n## 技術細節\n五角大廈計劃在安全的資料中心環境中，讓 AI 公司使用機密資料訓練軍事專用 AI 模型。這些模型為現有模型的特別版本，專門用於軍事用途。訓練過程中，資料所有權由國防部保留，AI 公司在少數情況下可查看資料。這樣的限制旨在保護機密資料的安全，但技術挑戰在於如何在不完全開放資料的情況下，確保 AI 模型的訓練效能和準確性。\n\n## 產業與市場影響\n五角大廈的計劃可能使其成為 AI 公司的重要客戶，進一步加速其對 AI 技術的依賴。自 2017 年 Project Maven 啟動以來，國防部與 AI 公司的合約數量顯著增加，尤其是與 Palantir Technologies 和 OpenAI 等公司的合作。這樣的趨勢預示著軍事 AI 市場的擴張，並可能促使更多 AI 公司投入軍事應用的開發。\n\n## 競爭格局\nOpenAI 和 xAI 是此計劃的主要參與者，他們已與國防部簽署合約，參與機密資料訓練計劃。相較之下，Anthropic 因擔心技術濫用而拒絕放寬技術使用限制，因此未參與此計劃。這些競爭者之間的選擇差異，反映了 AI 公司在面對軍事應用時的不同策略和考量。\n\n## 不同聲音\n計劃引發了安全風險和倫理爭議，特別是關於機密資料的使用和 AI 技術的軍事應用。Anthropic 拒絕參與，因其擔心技術可能被用於大規模監控和自主武器。這一點引發了對於技術濫用的廣泛討論，以及對 AI 技術如何被安全應用於軍事領域的探討。\n\n## 對台灣的意義\n對台灣而言，五角大廈的計劃可能促使台灣科技公司加強與美國的合作，並提升在國防科技領域的競爭力。然而，這也可能引發對資料安全和技術倫理的關注。台灣企業需審慎考量在參與此類計劃時的技術安全性和倫理責任。\n\n## 參考來源\n1. MIT Tech Review - https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/\n2. The Decoder - https://the-decoder.com/pentagon-plans-to-let-ai-companies-train-models-on-classified-data/\n3. Brennan Center for Justice - https://www.brennancenter.org/our-work/research-reports/business-military-ai\n4. TechNews - https://technews.tw/2026/03/19/the-defense-department-reportedly-plans-to-train-ai-models-on-classified-military-data/"
     }
   ]
 }

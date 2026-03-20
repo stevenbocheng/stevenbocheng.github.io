@@ -1,0 +1,46 @@
+---
+title: "五角大廈計劃開放機密資料予AI公司訓練，引發安全與倫理爭議"
+date: 2026-03-20
+categories:
+  - AI
+  - 科技新聞
+tags:
+  - AI
+  - OpenAI
+  - xAI
+  - 五角大廈
+description: "五角大廈宣佈將允許 AI 公司使用其機密軍事資料訓練模型，此計劃引發了對安全風險及倫理問題的廣泛關注，涉及 OpenAI 和 xAI 等公司的合作。"
+image: "/assets/images/pentagon-plans-to-open-classified-data-to-ai-companies_v1.png"
+---
+
+# 五角大廈計劃開放機密資料予AI公司訓練，引發安全與倫理爭議
+
+五角大廈宣佈將允許 AI 公司使用其機密軍事資料訓練模型。此計劃旨在增強軍事 AI 的準確性和效能，涉及 OpenAI 和 xAI 等公司的合作。然而，該計劃引發了對安全風險及倫理問題的廣泛關注。
+
+## 重點整理
+- 五角大廈計劃讓 AI 公司使用機密資料訓練軍事專用模型，可能改變軍事 AI 的發展方式。
+- 訓練將在認證的資料中心進行，AI 公司僅在特定情況下可查看機密資料。
+- 計劃可能加速五角大廈對 AI 技術的依賴，並促使更多公司參與軍事 AI 的開發。
+- OpenAI 和 xAI 是主要參與者，而 Anthropic 因拒絕放寬技術限制未參與。
+- 計劃引發安全風險和倫理爭議，特別是關於機密資料的使用和 AI 技術的軍事應用。
+
+## 技術細節
+五角大廈計劃在安全的資料中心環境中，讓 AI 公司使用機密資料訓練軍事專用 AI 模型。這些模型為現有模型的特別版本，專門用於軍事用途。訓練過程中，資料所有權由國防部保留，AI 公司在少數情況下可查看資料。這樣的限制旨在保護機密資料的安全，但技術挑戰在於如何在不完全開放資料的情況下，確保 AI 模型的訓練效能和準確性。
+
+## 產業與市場影響
+五角大廈的計劃可能使其成為 AI 公司的重要客戶，進一步加速其對 AI 技術的依賴。自 2017 年 Project Maven 啟動以來，國防部與 AI 公司的合約數量顯著增加，尤其是與 Palantir Technologies 和 OpenAI 等公司的合作。這樣的趨勢預示著軍事 AI 市場的擴張，並可能促使更多 AI 公司投入軍事應用的開發。
+
+## 競爭格局
+OpenAI 和 xAI 是此計劃的主要參與者，他們已與國防部簽署合約，參與機密資料訓練計劃。相較之下，Anthropic 因擔心技術濫用而拒絕放寬技術使用限制，因此未參與此計劃。這些競爭者之間的選擇差異，反映了 AI 公司在面對軍事應用時的不同策略和考量。
+
+## 不同聲音
+計劃引發了安全風險和倫理爭議，特別是關於機密資料的使用和 AI 技術的軍事應用。Anthropic 拒絕參與，因其擔心技術可能被用於大規模監控和自主武器。這一點引發了對於技術濫用的廣泛討論，以及對 AI 技術如何被安全應用於軍事領域的探討。
+
+## 對台灣的意義
+對台灣而言，五角大廈的計劃可能促使台灣科技公司加強與美國的合作，並提升在國防科技領域的競爭力。然而，這也可能引發對資料安全和技術倫理的關注。台灣企業需審慎考量在參與此類計劃時的技術安全性和倫理責任。
+
+## 參考來源
+1. MIT Tech Review - https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/
+2. The Decoder - https://the-decoder.com/pentagon-plans-to-let-ai-companies-train-models-on-classified-data/
+3. Brennan Center for Justice - https://www.brennancenter.org/our-work/research-reports/business-military-ai
+4. TechNews - https://technews.tw/2026/03/19/the-defense-department-reportedly-plans-to-train-ai-models-on-classified-military-data/
