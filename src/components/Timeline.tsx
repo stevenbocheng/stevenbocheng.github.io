@@ -5,7 +5,7 @@ import { X, ZoomIn } from 'lucide-react'
 
 const EXPERIENCES = [
   {
-    period: '2024 夏',
+    period: '2025 夏',
     role: '統計所暑期實習生',
     org: '中央研究院統計科學研究所',
     orgEn: 'Academia Sinica · Institute of Statistical Science',
@@ -15,7 +15,7 @@ const EXPERIENCES = [
     highlight: true,
   },
   {
-    period: '2023',
+    period: '2024',
     role: '微積分助教',
     org: '國立中山大學',
     orgEn: 'National Sun Yat-sen University',
@@ -25,7 +25,7 @@ const EXPERIENCES = [
     highlight: false,
   },
   {
-    period: '2022',
+    period: '2023',
     role: '微積分助教',
     org: '淡江大學',
     orgEn: 'Tamkang University',

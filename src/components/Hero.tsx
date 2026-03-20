@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Mail, Github, Linkedin, ArrowRight } from 'lucide-react'
+import { Mail, Github, Linkedin } from 'lucide-react'
 
 const container = {
   hidden: { opacity: 0 },
@@ -288,11 +288,11 @@ export default function Hero() {
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
             {[
-              { label: '應用數學系', detail: '微積分 · 線代 · 數理統計' },
-              { label: '中研院統計所', detail: '暑期實習生' },
+              { label: '國立中山大學', detail: '應用數學系' },
+              { label: '中研院統計所', detail: 'Statistics and Data Science Intern' },
               { label: '微積分助教', detail: '淡江大學 · 中山大學' },
             ].map((row) => (
-              <div key={row.label} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <div key={row.label} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
                 <div
                   style={{
                     width: '2px',
@@ -300,12 +300,15 @@ export default function Hero() {
                     borderRadius: '1px',
                     backgroundColor: 'var(--c-neon)',
                     flexShrink: 0,
+                    marginTop: '0.2rem',
                   }}
                 />
-                <span style={{ fontSize: '1.15rem', fontWeight: 500, color: 'var(--c-text)' }}>
-                  {row.label}
-                </span>
-                <span style={{ fontSize: '0.95rem', color: 'var(--c-muted)' }}>{row.detail}</span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.1rem' }}>
+                  <span style={{ fontSize: '1.05rem', fontWeight: 500, color: 'var(--c-text)' }}>
+                    {row.label}
+                  </span>
+                  <span style={{ fontSize: '0.9rem', color: 'var(--c-text)' }}>{row.detail}</span>
+                </div>
               </div>
             ))}
           </div>
@@ -392,32 +395,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll hint */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.8 }}
-        style={{
-          position: 'absolute',
-          bottom: '2rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.4rem',
-        }}
-      >
-        <span style={{ fontFamily: 'var(--f-mono)', fontSize: '0.65rem', color: 'var(--c-muted)', letterSpacing: '0.1em' }}>
-          SCROLL
-        </span>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
-        >
-          <ArrowRight size={12} style={{ color: 'var(--c-muted)', transform: 'rotate(90deg)' }} />
-        </motion.div>
-      </motion.div>
     </section>
   )
 }

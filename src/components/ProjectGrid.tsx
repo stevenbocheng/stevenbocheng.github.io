@@ -413,6 +413,121 @@ function Project4Body() {
   )
 }
 
+/* ─── Project 6: AI News Automation ─────────────────── */
+function Project6Body() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+      {/* Overview */}
+      <div>
+        <SectionLabel>專案概覽</SectionLabel>
+        <p style={{ fontSize: '0.9rem', color: 'var(--c-subtle)', lineHeight: 1.85 }}>
+          8 個 AI Agent 組成完整新聞生產流水線，每日台灣時間 08:00 由 GitHub Actions 自動觸發。
+          從 RSS 抓取到文章發布全程零人工介入，LangGraph 負責條件路由與狀態管理，
+          低分文章自動退稿重寫，最多兩次。
+        </p>
+      </div>
+
+      {/* Live site screenshot */}
+      <div>
+        <SectionLabel>實際運行畫面</SectionLabel>
+        <p style={{ fontSize: '0.8rem', color: 'var(--c-muted)', marginBottom: '0.75rem' }}>
+          此新聞站即建置於本網站內，路徑為 <span style={{ fontFamily: 'var(--f-mono)', color: 'var(--c-neon)' }}>/ai-news</span>，每日自動更新。
+        </p>
+        <img
+          src="/ai-news-screenshot.jpg"
+          alt="AI 科技新聞站實際畫面"
+          style={{ width: '100%', borderRadius: '0.75rem', border: '1px solid var(--c-border)' }}
+        />
+      </div>
+
+      {/* Stats */}
+      <div>
+        <SectionLabel>系統規模</SectionLabel>
+        <div className="stat-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem' }}>
+          <StatBadge label="AI Agent 數量" value="8 Agents" color="#f97316" />
+          <StatBadge label="NewsState 狀態欄位" value="27 欄位" color="#f97316" />
+          <StatBadge label="每日自動執行" value="08:00 台灣時間" color="#f97316" />
+        </div>
+      </div>
+
+      {/* Pipeline */}
+      <div>
+        <SectionLabel>8 Agent 流水線</SectionLabel>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+          {[
+            { step: '01', title: 'Researcher', desc: 'RSS × 5 + Tavily 即時搜尋，規則預篩 + LLM 評分 ≥70 分' },
+            { step: '02', title: 'Translator', desc: '英→台灣繁體中文，35+ 專業用語校正表' },
+            { step: '03', title: 'Deep Researcher', desc: '子問題分解、多源查核、標記可信度' },
+            { step: '04', title: 'Writer', desc: '三步驟：article-writing → humanizer-zh-tw → editor' },
+            { step: '05', title: 'Manager', desc: '5 維度評分（≥6.0 才過）；退稿最多 2 次' },
+            { step: '06', title: 'Media Generator', desc: 'HuggingFace FLUX.1-schnell / SDXL 生成封面圖' },
+            { step: '07', title: 'Media Reviewer', desc: '品質審核，最多重試 3 次' },
+            { step: '08', title: 'Publisher', desc: '去重偵測、寫入 _posts/、更新 ai-news.json' },
+          ].map((row) => (
+            <div key={row.step} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', padding: '0.75rem 1rem', borderRadius: '0.5rem', backgroundColor: 'var(--c-raised)' }}>
+              <span style={{ fontFamily: 'var(--f-mono)', fontSize: '0.7rem', color: '#f97316', fontWeight: 700, flexShrink: 0, paddingTop: '0.1rem' }}>{row.step}</span>
+              <div>
+                <p style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--c-text)', marginBottom: '0.15rem' }}>{row.title}</p>
+                <p style={{ fontSize: '0.8rem', color: 'var(--c-muted)' }}>{row.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Architecture highlights */}
+      <div>
+        <SectionLabel>設計亮點</SectionLabel>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <Highlight
+            icon="🔁"
+            title="條件路由退稿機制"
+            desc="Manager Agent 以 5 維度評分，低於門檻直接退回 Writer 重寫，最多兩次，確保發布品質。"
+            color="#f97316"
+          />
+          <Highlight
+            icon="✍️"
+            title="三角色寫作流程"
+            desc="Writer 節點依序執行：撰稿、去除 AI 痕跡（humanizer-zh-tw）、精煉文字（editor），模仿編輯室人工審稿流程。"
+            color="#f97316"
+          />
+          <Highlight
+            icon="💰"
+            title="雙模型成本控制"
+            desc="複雜任務（撰稿）用 GPT-4o，簡單任務（翻譯、審核）用 GPT-4o-mini；每次最多發布 3 篇防費用失控。"
+            color="var(--c-neon)"
+          />
+          <Highlight
+            icon="🔌"
+            title="優雅降級設計"
+            desc="HF_TOKEN 未設定時自動跳過媒體生成；每個 Agent 只讀寫自己的 NewsState 欄位，27 個欄位完全解耦。"
+            color="var(--c-neon)"
+          />
+        </div>
+      </div>
+
+      {/* Tech stack */}
+      <div>
+        <SectionLabel>技術堆疊</SectionLabel>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          {[
+            { category: 'Agent 框架', tech: 'LangGraph 0.2+ StateGraph + LangChain 0.3+' },
+            { category: 'LLM', tech: 'OpenAI GPT-4o（寫作）/ GPT-4o-mini（審核、翻譯）' },
+            { category: '搜尋', tech: 'Tavily API 即時網路搜尋 + RSS × 5 來源' },
+            { category: '媒體生成', tech: 'HuggingFace FLUX.1-schnell / SDXL Inference API' },
+            { category: '部署', tech: 'GitHub Actions 排程 + Jekyll / GitHub Pages' },
+          ].map((row, i) => (
+            <div key={i} style={{ display: 'grid', gridTemplateColumns: '7rem 1fr', gap: '1rem', padding: '0.6rem 1rem', borderRadius: '0.5rem', backgroundColor: 'var(--c-raised)', fontSize: '0.83rem' }}>
+              <span style={{ color: '#f97316', fontFamily: 'var(--f-mono)', fontSize: '0.72rem' }}>{row.category}</span>
+              <span style={{ color: 'var(--c-subtle)' }}>{row.tech}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 /* ─── Project card data ──────────────────────────────── */
 const PROJECTS: ProjectData[] = [
   {
@@ -454,6 +569,14 @@ const PROJECTS: ProjectData[] = [
     accentColor: '#a78bfa',
     body: <Project5Body />,
   },
+  {
+    id: 6,
+    title: '全自動 AI 科技新聞編輯室',
+    subtitle: '8 Agents · LangGraph · GitHub Actions',
+    accentColor: '#f97316',
+    github: 'https://github.com/stevenbocheng/AI-NEWS-Teams',
+    body: <Project6Body />,
+  },
 ]
 
 /* ─── Card meta ──────────────────────────────────────── */
@@ -488,6 +611,12 @@ const CARD_META = [
     summary: '使用主動學習搭配粒子校正流程與不確定性指標，自動化挑選 CryoEM 蛋白質粒子影像。',
     index: '05',
     wip: true,
+  },
+  {
+    tags: ['LangGraph', 'GPT-4o', 'Tavily', 'HuggingFace', 'GitHub Actions'],
+    metrics: ['8 AI Agents', '每日自動發布', '零人工介入'],
+    summary: '8 個 AI 代理協作，每日自動收集、深度研究、撰寫並發布繁體中文科技新聞。LangGraph 條件路由，低分文章自動退稿重寫；三角色寫作流程去除 AI 痕跡。',
+    index: '06',
   },
 ]
 
