@@ -27,6 +27,7 @@ interface NewsFeed {
 // ── Constants ────────────────────────────────────────────────────────────────
 
 const ACCENT = '#60a5fa'
+const PAGE_SIZE = 5
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -59,9 +60,11 @@ const itemAnim = {
 function NewsArticleList({
   articles,
   onSelect,
+  indexOffset = 0,
 }: {
   articles: NewsArticle[]
   onSelect: (a: NewsArticle) => void
+  indexOffset?: number
 }) {
   return (
     <motion.div
@@ -106,7 +109,7 @@ function NewsArticleList({
                 minWidth: '2.5rem',
               }}
             >
-              {String(i + 1).padStart(2, '0')}
+              {String(indexOffset + i + 1).padStart(2, '0')}
             </span>
 
             {/* Title + description + tags */}
@@ -639,6 +642,11 @@ export default function AINewsFeed() {
   const [selected, setSelected] = useState<NewsArticle | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
+  const [currentPage, setCurrentPage] = useState(1)
+
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [searchQuery, selectedTag])
 
   useEffect(() => {
     fetch('https://raw.githubusercontent.com/stevenbocheng/AI-NEWS-Teams/main/public/ai-news.json')
@@ -663,6 +671,8 @@ export default function AINewsFeed() {
     const matchTag = !selectedTag || a.tags.includes(selectedTag)
     return matchSearch && matchTag
   })
+  const totalPages = Math.max(1, Math.ceil(filteredArticles.length / PAGE_SIZE))
+  const pagedArticles = filteredArticles.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE)
 
   return (
     <section id="ai-news" style={{ padding: '5rem 2rem', maxWidth: '1100px', margin: '0 auto' }}>
@@ -830,8 +840,9 @@ export default function AINewsFeed() {
           <AnimatePresence mode="wait">
             {selected === null ? (
               <NewsArticleList
-                key="list"
-                articles={filteredArticles}
+                key={`list-${currentPage}`}
+                articles={pagedArticles}
+                indexOffset={(currentPage - 1) * PAGE_SIZE}
                 onSelect={(a) => setSelected(a)}
               />
             ) : (
@@ -844,6 +855,49 @@ export default function AINewsFeed() {
           </AnimatePresence>
         )}
       </div>
+
+      {/* Pagination */}
+      {!loading && !error && selected === null && totalPages > 1 && (
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginTop: '1.25rem' }}>
+          <button
+            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+            disabled={currentPage === 1}
+            style={{
+              fontFamily: 'var(--f-mono)',
+              fontSize: '0.72rem',
+              padding: '0.3rem 0.75rem',
+              borderRadius: '0.375rem',
+              border: `1px solid ${ACCENT}40`,
+              backgroundColor: 'transparent',
+              color: currentPage === 1 ? 'var(--c-muted)' : ACCENT,
+              cursor: currentPage === 1 ? 'not-allowed' : 'pointer',
+              opacity: currentPage === 1 ? 0.4 : 1,
+            }}
+          >
+            ← 上一頁
+          </button>
+          <span style={{ fontFamily: 'var(--f-mono)', fontSize: '0.65rem', color: 'var(--c-muted)' }}>
+            {currentPage} / {totalPages}
+          </span>
+          <button
+            onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+            disabled={currentPage === totalPages}
+            style={{
+              fontFamily: 'var(--f-mono)',
+              fontSize: '0.72rem',
+              padding: '0.3rem 0.75rem',
+              borderRadius: '0.375rem',
+              border: `1px solid ${ACCENT}40`,
+              backgroundColor: 'transparent',
+              color: currentPage === totalPages ? 'var(--c-muted)' : ACCENT,
+              cursor: currentPage === totalPages ? 'not-allowed' : 'pointer',
+              opacity: currentPage === totalPages ? 0.4 : 1,
+            }}
+          >
+            下一頁 →
+          </button>
+        </div>
+      )}
 
       {/* Pipeline info bar（只在列表層顯示）*/}
       {!loading && !error && selected === null && filteredArticles.length > 0 && (

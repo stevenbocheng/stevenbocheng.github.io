@@ -42,25 +42,21 @@ function Project1Body() {
         <SectionLabel>系統架構亮點</SectionLabel>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
           <Highlight
-            icon="📡"
             title="Kalman Filter 軌跡平滑"
             desc="建立 4×2 狀態空間物理慣性模型，主動抵抗瞬間異常觀測值，消除相機抖動造成的筆跡鋸齒，大幅提升下游 OCR 辨識率。"
             color="var(--c-neon)"
           />
           <Highlight
-            icon="🧠"
             title="Neuro-Symbolic 雙核架構"
             desc="GPT-4o-mini 只負責理解歪扭字跡語意，精確計算完全交給 SymPy 符號引擎。從設計層根治 LLM 數學幻覺問題。"
             color="var(--c-amber)"
           />
           <Highlight
-            icon="✂️"
             title="Dynamic ROI 自動裁剪引擎"
             desc="OpenCV 連通區域分析精準定位字跡邊界框，裁切後傳輸影像大小降低 70%+，同步提升 LLM 對小字體的注意力。"
             color="var(--c-blue)"
           />
           <Highlight
-            icon="💡"
             title="CLAHE 動態亮度均衡 + 3D 透視補償"
             desc="強逆光下維持 MediaPipe 穩定追蹤；World Landmarks 3D 座標消除透視畸變，手勢判定具備尺度不變性。"
             color="var(--c-neon)"
@@ -148,31 +144,26 @@ function Project2Body() {
         <SectionLabel>技術亮點</SectionLabel>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
           <Highlight
-            icon="🔧"
             title="車位價格拆算（Lasso 回歸）"
             desc="政府原始資料車位與住宅總價混報，自行建模拆算還原真實淨屋單價，解決資料髒污而非迴避它。"
             color="var(--c-amber)"
           />
           <Highlight
-            icon="🏗️"
             title="分流建模策略"
             desc="集合住宅（CatBoost）與透天厝（LightGBM）分別建模，由業務邏輯驅動模型設計，而非套用單一算法。"
             color="var(--c-amber)"
           />
           <Highlight
-            icon="📐"
             title="PCA 地理降維 + 動能特徵"
             desc="5 項交通距離 PCA 壓縮解決多重共線性；加入行政區 30/90/180 日移動均價，MAPE 改善約 3%。"
             color="var(--c-neon)"
           />
           <Highlight
-            icon="🔍"
             title="SHAP 可解釋性"
             desc="每筆估價附瀑布圖，清楚說明哪些特徵推高或壓低預測價格，符合業界對模型透明度的要求。"
             color="var(--c-neon)"
           />
           <Highlight
-            icon="🚀"
             title="Streamlit Cloud 公開部署"
             desc="不只是 Jupyter Notebook，完整部署為可公開存取的互動式儀表板，任何人都能即時使用。"
             color="var(--c-blue)"
@@ -264,7 +255,7 @@ function Project3Body() {
         <SectionLabel>專案概覽</SectionLabel>
         <p style={{ fontSize: '0.9rem', color: 'var(--c-subtle)', lineHeight: 1.85 }}>
           使用者輸入學習背景與目標（中文），系統自動規劃個人化短中長期學習路線，
-          並從 178 萬筆 Goodreads 書籍資料庫中以混合式 RAG 搜尋推薦書單，
+          並從Goodreads 書籍資料庫中挑選出5000本書集，以混合式 RAG 搜尋推薦書單，
           輸出結構化的 Markdown 學習建議。
         </p>
       </div>
@@ -283,10 +274,10 @@ function Project3Body() {
       <div>
         <SectionLabel>系統架構亮點</SectionLabel>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-          <Highlight icon="🤖" title="Multi-Agent 設計（LangGraph）" desc="拆分為 Planner → Retriever → Writer 三個節點，各司其職。預留 Reviewer 自動重審機制，含條件分支與 revision_count 上限保護。" color="#60a5fa" />
-          <Highlight icon="🔍" title="混合式 RAG 架構" desc="FAISS 語義搜尋（60%）+ BM25 關鍵字搜尋（40%）EnsembleRetriever 融合，解決純向量搜尋在專有名詞上的盲點。" color="#60a5fa" />
-          <Highlight icon="🌐" title="跨語言橋接" desc="Planner 將使用者的中文目標自動轉換為英文 SEARCH_QUERIES，讓英文書籍資料庫的 BM25 搜尋正確發揮效果。" color="var(--c-neon)" />
-          <Highlight icon="🛡️" title="輸入防護 + 可觀測性" desc="LLM 分類器過濾不相關問題，避免無效 API 呼叫。LangSmith 全程追蹤 Token 用量與執行時間。" color="var(--c-neon)" />
+          <Highlight title="Multi-Agent 設計（LangGraph）" desc="拆分為 Planner → Retriever → Writer 三個節點，各司其職。預留 Reviewer 自動重審機制，含條件分支與 revision_count 上限保護。" color="#60a5fa" />
+          <Highlight title="混合式 RAG 架構" desc="FAISS 語義搜尋（60%）+ BM25 關鍵字搜尋（40%）EnsembleRetriever 融合，解決純向量搜尋在專有名詞上的盲點。" color="#60a5fa" />
+          <Highlight title="跨語言橋接" desc="Planner 將使用者的中文目標自動轉換為英文 SEARCH_QUERIES，讓英文書籍資料庫的 BM25 搜尋正確發揮效果。" color="var(--c-neon)" />
+          <Highlight title="輸入防護 + 可觀測性" desc="LLM 分類器過濾不相關問題，避免無效 API 呼叫。LangSmith 全程追蹤 Token 用量與執行時間。" color="var(--c-neon)" />
         </div>
       </div>
 
@@ -421,9 +412,9 @@ function Project6Body() {
       <div>
         <SectionLabel>專案概覽</SectionLabel>
         <p style={{ fontSize: '0.9rem', color: 'var(--c-subtle)', lineHeight: 1.85 }}>
-          8 個 AI Agent 組成完整新聞生產流水線，每日台灣時間 08:00 由 GitHub Actions 自動觸發。
-          從 RSS 抓取到文章發布全程零人工介入，LangGraph 負責條件路由與狀態管理，
-          低分文章自動退稿重寫，最多兩次。
+          實現媒體編輯流程的全面自動化，打造由 AI 驅動的新型態工作流。
+          每天台灣時間 08:00，系統從 VentureBeat、MIT Technology Review、TechCrunch 等科技媒體抓取當日 AI 新聞，
+          自動翻譯、查核、撰寫、審稿、配圖，最後發布到網站。沒有人需要操作任何東西。
         </p>
       </div>
 
@@ -431,7 +422,7 @@ function Project6Body() {
       <div>
         <SectionLabel>實際運行畫面</SectionLabel>
         <p style={{ fontSize: '0.8rem', color: 'var(--c-muted)', marginBottom: '0.75rem' }}>
-          此新聞站即建置於本網站內，路徑為 <span style={{ fontFamily: 'var(--f-mono)', color: 'var(--c-neon)' }}>/ai-news</span>，每日自動更新。
+          此新聞站即建置於本網站內，每日自動更新。
         </p>
         <img
           src="/ai-news-screenshot.jpg"
@@ -444,9 +435,9 @@ function Project6Body() {
       <div>
         <SectionLabel>系統規模</SectionLabel>
         <div className="stat-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem' }}>
-          <StatBadge label="AI Agent 數量" value="8 Agents" color="#f97316" />
-          <StatBadge label="NewsState 狀態欄位" value="27 欄位" color="#f97316" />
-          <StatBadge label="每日自動執行" value="08:00 台灣時間" color="#f97316" />
+          <StatBadge label="每天早上 08:00 自動抓取" value="5 個國際科技媒體" color="#f97316" />
+          <StatBadge label="每篇文章字數" value="1,500–2,500 字" color="#f97316" />
+          <StatBadge label="串接 8 個 AI 角色" value="精確分工 各司其職" color="#f97316" />
         </div>
       </div>
 
@@ -480,27 +471,18 @@ function Project6Body() {
         <SectionLabel>設計亮點</SectionLabel>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
           <Highlight
-            icon="🔁"
-            title="條件路由退稿機制"
-            desc="Manager Agent 以 5 維度評分，低於門檻直接退回 Writer 重寫，最多兩次，確保發布品質。"
+            title="完整工作流程設計"
+            desc="8 個 Agent 透過 LangGraph 串接成有向圖，支援條件分支與迴圈。Manager 評分不足退回 Writer 重寫（最多 2 次），Media Reviewer 審核不通過重新生成封面（最多 3 次），確保每篇文章達標才發布。"
             color="#f97316"
           />
           <Highlight
-            icon="✍️"
-            title="三角色寫作流程"
-            desc="Writer 節點依序執行：撰稿、去除 AI 痕跡（humanizer-zh-tw）、精煉文字（editor），模仿編輯室人工審稿流程。"
+            title="Skill 驅動的 Agent 設計"
+            desc="每個 Agent 搭配對應的 Skill 規範（deep-research、article-writing、humanizer-zh-tw、editor），定義職責與輸出標準。其中 humanizer-zh-tw 專門偵測並修正 24 種 AI 寫作模式，讓文章讀起來不像機器寫的。"
             color="#f97316"
           />
           <Highlight
-            icon="💰"
-            title="雙模型成本控制"
-            desc="複雜任務（撰稿）用 GPT-4o，簡單任務（翻譯、審核）用 GPT-4o-mini；每次最多發布 3 篇防費用失控。"
-            color="var(--c-neon)"
-          />
-          <Highlight
-            icon="🔌"
-            title="優雅降級設計"
-            desc="HF_TOKEN 未設定時自動跳過媒體生成；每個 Agent 只讀寫自己的 NewsState 欄位，27 個欄位完全解耦。"
+            title="雙模型分工與成本控管"
+            desc="GPT-4o 負責撰稿與深度分析，GPT-4o-mini 處理翻譯、評分、校對，成本約便宜 15 倍。規則預篩在 LLM 前執行，每次最多發布 3 篇，防止費用失控。"
             color="var(--c-neon)"
           />
         </div>
@@ -511,11 +493,11 @@ function Project6Body() {
         <SectionLabel>技術堆疊</SectionLabel>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           {[
-            { category: 'Agent 框架', tech: 'LangGraph 0.2+ StateGraph + LangChain 0.3+' },
-            { category: 'LLM', tech: 'OpenAI GPT-4o（寫作）/ GPT-4o-mini（審核、翻譯）' },
-            { category: '搜尋', tech: 'Tavily API 即時網路搜尋 + RSS × 5 來源' },
-            { category: '媒體生成', tech: 'HuggingFace FLUX.1-schnell / SDXL Inference API' },
-            { category: '部署', tech: 'GitHub Actions 排程 + Jekyll / GitHub Pages' },
+            { category: 'Agent 框架', tech: 'LangGraph + LangChain' },
+            { category: 'LLM', tech: 'GPT-4o（寫作）/ GPT-4o-mini（審核、翻譯）' },
+            { category: '新聞來源', tech: 'Tavily 即時搜尋 + RSS 訂閱 × 5 媒體' },
+            { category: '封面圖生成', tech: 'HuggingFace Inference API' },
+            { category: '部署', tech: 'GitHub Actions + GitHub Pages' },
           ].map((row, i) => (
             <div key={i} style={{ display: 'grid', gridTemplateColumns: '7rem 1fr', gap: '1rem', padding: '0.6rem 1rem', borderRadius: '0.5rem', backgroundColor: 'var(--c-raised)', fontSize: '0.83rem' }}>
               <span style={{ color: '#f97316', fontFamily: 'var(--f-mono)', fontSize: '0.72rem' }}>{row.category}</span>
@@ -539,6 +521,22 @@ const PROJECTS: ProjectData[] = [
     body: <Project1Body />,
   },
   {
+    id: 3,
+    title: 'AI 學習諮詢師',
+    subtitle: 'Multi-Agent RAG · LangGraph',
+    accentColor: 'var(--c-blue)',
+    github: 'https://github.com/stevenbocheng/LLM-AI-Learning-Consultant',
+    body: <Project3Body />,
+  },
+  {
+    id: 6,
+    title: '全自動 AI 科技新聞編輯室',
+    subtitle: '8 Agents · LangGraph · GitHub Actions',
+    accentColor: '#f97316',
+    github: 'https://github.com/stevenbocheng/AI-NEWS-Teams',
+    body: <Project6Body />,
+  },
+  {
     id: 2,
     title: '高雄房價預測系統',
     subtitle: 'End-to-End ML Pipeline',
@@ -546,14 +544,6 @@ const PROJECTS: ProjectData[] = [
     github: 'https://github.com/stevenbocheng/Kaohsiung-Housing--Data-Analysis',
     demo: 'https://kaohsiung-housing--data-analysis-kiogievjdtcmtownemeud8.streamlit.app/',
     body: <Project2Body />,
-  },
-  {
-    id: 3,
-    title: 'AI 學習諮詢師',
-    subtitle: 'Multi-Agent RAG · LangGraph',
-    accentColor: 'var(--c-amber)',
-    github: 'https://github.com/stevenbocheng/LLM-AI-Learning-Consultant',
-    body: <Project3Body />,
   },
   {
     id: 4,
@@ -569,14 +559,6 @@ const PROJECTS: ProjectData[] = [
     accentColor: '#a78bfa',
     body: <Project5Body />,
   },
-  {
-    id: 6,
-    title: '全自動 AI 科技新聞編輯室',
-    subtitle: '8 Agents · LangGraph · GitHub Actions',
-    accentColor: '#f97316',
-    github: 'https://github.com/stevenbocheng/AI-NEWS-Teams',
-    body: <Project6Body />,
-  },
 ]
 
 /* ─── Card meta ──────────────────────────────────────── */
@@ -588,35 +570,35 @@ const CARD_META = [
     index: '01',
   },
   {
-    tags: ['CatBoost', 'LightGBM', 'SHAP', 'Lasso', 'PCA'],
-    metrics: ['MAPE 11.9%', 'R² 0.625', '31 行政區 · 137K 筆資料'],
-    summary: '從原始政府髒資料到可公開存取的互動預測儀表板。端到端 ML Pipeline 的完整呈現。',
-    index: '02',
-  },
-  {
     tags: ['GPT-4o', 'LangGraph', 'FAISS', 'BM25', 'LangChain'],
     metrics: ['178 萬筆書籍資料庫', 'Multi-Agent 三節點', '混合式 RAG'],
     summary: '輸入學習目標，自動規劃短中長期路線並推薦書單。LangGraph Multi-Agent + FAISS/BM25 混合式 RAG，完整部署於 Streamlit Cloud。',
+    index: '02',
+  },
+  {
+    tags: ['LangGraph', 'GPT-4o', 'Tavily', 'HuggingFace', 'GitHub Actions'],
+    metrics: ['8 AI Agents · 15 NewsState 欄位', '評分 ≥ 6.0 才發布，最多退稿 2 次', '24 種 AI 寫作模式偵測'],
+    summary: '8 個 AI 代理以 LangGraph StateGraph 串接，每日自動蒐集、深度查核、撰寫並發布繁體中文科技新聞。Manager 以 5 維度評分把關，Writer 依序執行 3 個 Prompt 角色去除 AI 痕跡。',
     index: '03',
+  },
+  {
+    tags: ['CatBoost', 'LightGBM', 'SHAP', 'Lasso', 'PCA'],
+    metrics: ['MAPE 11.9%', 'R² 0.625', '31 行政區 · 137K 筆資料'],
+    summary: '從原始政府髒資料到可公開存取的互動預測儀表板。端到端 ML Pipeline 的完整呈現。',
+    index: '04',
   },
   {
     tags: ['AlphaFold 3', 'SHAPEIT4', 'ANNOVAR', 'R', 'Python'],
     metrics: ['1,491 位參與者', '3 目標基因', '全自動化流程'],
     summary: '探索高血壓基因變異與蛋白質 3D 結構的關係。建立端到端可重複的基因組結構分析工作流程。',
-    index: '04',
+    index: '05',
   },
   {
     tags: ['Python', 'Deep Learning', 'Active Learning', 'CryoEM'],
     metrics: ['主動學習挑選', '不確定性指標', '取代人工成本'],
     summary: '使用主動學習搭配粒子校正流程與不確定性指標，自動化挑選 CryoEM 蛋白質粒子影像。',
-    index: '05',
-    wip: true,
-  },
-  {
-    tags: ['LangGraph', 'GPT-4o', 'Tavily', 'HuggingFace', 'GitHub Actions'],
-    metrics: ['8 AI Agents', '每日自動發布', '零人工介入'],
-    summary: '8 個 AI 代理協作，每日自動收集、深度研究、撰寫並發布繁體中文科技新聞。LangGraph 條件路由，低分文章自動退稿重寫；三角色寫作流程去除 AI 痕跡。',
     index: '06',
+    wip: true,
   },
 ]
 
@@ -697,7 +679,7 @@ export default function ProjectGrid() {
                     fontFamily: 'var(--f-mono)',
                     fontSize: '2.25rem',
                     fontWeight: 700,
-                    color: `${project.accentColor}30`,
+                    color: 'rgba(232, 232, 240, 1)',
                     lineHeight: 1,
                   }}
                 >

@@ -65,7 +65,7 @@ export function Highlight({
   desc,
   color,
 }: {
-  icon: string
+  icon?: string
   title: string
   desc: string
   color?: string
@@ -83,7 +83,7 @@ export function Highlight({
         borderLeft: `2px solid ${c}`,
       }}
     >
-      <span style={{ fontSize: '1.1rem', flexShrink: 0 }}>{icon}</span>
+      {icon && <span style={{ fontSize: '1.1rem', flexShrink: 0 }}>{icon}</span>}
       <div>
         <p style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--c-text)', marginBottom: '0.2rem' }}>
           {title}
