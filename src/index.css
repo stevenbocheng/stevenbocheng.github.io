@@ -2,28 +2,36 @@
 
 /* ─── Design Tokens ─────────────────────────────────── */
 :root {
-  --c-void:       #090910;
-  --c-surface:    #12121c;
-  --c-raised:     #1a1a28;
-  --c-border:     #2a2a3a;
-  --c-neon:       #4ade80;
-  --c-neon-glow:  rgba(74, 222, 128, 0.15);
-  --c-neon-dim:   rgba(74, 222, 128, 0.08);
-  --c-amber:      #f0a040;
-  --c-blue:       #60a5fa;
-  --c-text:       #e8e8f0;
-  --c-subtle:     #a0a0b0;
-  --c-muted:      #6b6b80;
+  --c-void: #090910;
+  --c-surface: #12121c;
+  --c-raised: #1a1a28;
+  --c-border: #2a2a3a;
+  --c-neon: #4ade80;
+  --c-neon-glow: rgba(74, 222, 128, 0.15);
+  --c-neon-dim: rgba(74, 222, 128, 0.08);
+  --c-amber: #f0a040;
+  --c-blue: #60a5fa;
+  --c-text: #e8e8f0;
+  --c-subtle: #c4c4d4;
+  --c-muted: #9090a8;
 
   --f-display: 'Space Grotesk', sans-serif;
-  --f-body:    'Noto Sans TC', sans-serif;
-  --f-mono:    'JetBrains Mono', monospace;
+  --f-body: 'Noto Sans TC', sans-serif;
+  --f-mono: 'JetBrains Mono', monospace;
 }
 
 /* ─── Reset ──────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: var(--c-void);
@@ -35,10 +43,22 @@ body {
 }
 
 /* ─── Scrollbar ───────────────────────────────────────── */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--c-void); }
-::-webkit-scrollbar-thumb { background: var(--c-border); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--c-neon); }
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-neon);
+}
 
 /* ─── Grid paper texture ─────────────────────────────── */
 .bg-grid {
@@ -50,26 +70,36 @@ body {
 
 /* ─── Tech Marquee ───────────────────────────────────── */
 @keyframes marquee-left {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
+
 .marquee-track {
   display: flex;
   width: max-content;
   animation: marquee-left 35s linear infinite;
 }
-.marquee-track:hover { animation-play-state: paused; }
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
 
 /* ─── Award zoom hint on hover ──────────────────────── */
 .card-hover:hover .award-zoom-hint {
   opacity: 1 !important;
-  background-color: rgba(9,9,16,0.45) !important;
+  background-color: rgba(9, 9, 16, 0.45) !important;
 }
 
 /* ─── Neon hover glow on cards ───────────────────────── */
 .card-hover {
   transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
 }
+
 .card-hover:hover {
   border-color: rgba(74, 222, 128, 0.35) !important;
   box-shadow: 0 0 24px rgba(74, 222, 128, 0.06);
@@ -84,6 +114,7 @@ body {
   backdrop-filter: blur(6px);
   z-index: 50;
 }
+
 [data-radix-dialog-content] {
   position: fixed;
   top: 50%;
@@ -96,14 +127,18 @@ body {
 }
 
 /* ─── Mobile Responsive ──────────────────────────────── */
-body { overflow-x: hidden; }
+body {
+  overflow-x: hidden;
+}
 
 @media (max-width: 768px) {
+
   /* Hero bento grid → single column stack */
   .hero-grid {
     grid-template-columns: 1fr !important;
   }
-  .hero-grid > * {
+
+  .hero-grid>* {
     grid-column: auto !important;
     grid-row: auto !important;
   }
@@ -119,6 +154,7 @@ body { overflow-x: hidden; }
     padding: 1.25rem 1rem !important;
     gap: 0.75rem !important;
   }
+
   .project-card-index {
     display: none !important;
   }
@@ -140,6 +176,7 @@ body { overflow-x: hidden; }
     grid-template-columns: auto 1fr !important;
     font-size: 0.78rem !important;
   }
+
   .gesture-grid-note {
     display: none !important;
   }
